@@ -23,10 +23,13 @@
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>
+  <!-- Conditional logic so that completed property is displayed when editing and not when creating. A todo_item cannot possibly be done before it is created. -->
+  <% if @todo_item.persisted? %>
   <div class="field">
     <%= f.label :completed %><br>
     <%= f.check_box :completed %>
   </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
