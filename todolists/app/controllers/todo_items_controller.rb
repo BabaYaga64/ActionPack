@@ -5,6 +5,8 @@ class TodoItemsController < ApplicationController
   # GET /todo_items.json
   def index
     @todo_items = TodoItem.all
+    # Update the index method to assign the count of completed todoitems in a number variable
+    @number_of_completed_todos = TodoItem.completed_todo_item_count
   end
 
   # GET /todo_items/1
